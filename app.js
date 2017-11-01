@@ -60,7 +60,7 @@ app.use(function(error, req, res, next) {
      res.status(500).render('500');
 });
 
-var port = process.env.PORT || 3030;
+var port = process.env.PORT || 8080;
 
 var server=app.listen(port,function(req,res){
     console.log(chalk.green("Catch the action at http://localhost:"+port));
