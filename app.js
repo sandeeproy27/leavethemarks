@@ -1,4 +1,3 @@
-var chalk = require('chalk');
 var express=require('express');
 var mongoose=require('mongoose');
 var db=require('./models/db.js');
@@ -51,17 +50,17 @@ app.get('/techStack',routes.techStack);
 app.get('/logout',user.logout);
 
 app.use(function(req, res) {
-     console.log(chalk.red("Error: 404"));
+     console.log("Error: 404");
      res.status(404).render('404');
 });
 
 app.use(function(error, req, res, next) {
-     console.log(chalk.red('Error : 500'+error))
+     console.log('Error : 500'+error);
      res.status(500).render('500');
 });
 
 var port = process.env.PORT || 8080;
 
 var server=app.listen(port,function(req,res){
-    console.log(chalk.green("Catch the action at http://localhost:"+port));
+    console.log("Catch the action at http://localhost:"+port);
 });
